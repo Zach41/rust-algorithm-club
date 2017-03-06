@@ -2,6 +2,7 @@
 name = "algorithm-club"
 version = "0.1.0"
 authors = ["Zach <zach_41@163.com>"]
+readme = "README.md"
 
 [dependencies]
 log = "0.3"
