@@ -1,4 +1,4 @@
-pub struct Heap<T: PartialOrd> {
+pub struct Heap<T> {
     inner: Vec<T>,
 }
 
