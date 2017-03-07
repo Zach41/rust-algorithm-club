@@ -13,4 +13,5 @@ Just used to learn Rust and algorithm.
 - [Stack](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Stack/README.markdown)
 - [Heap](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Heap/README.markdown)
 - [Queue](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Queue/README.markdown)
+- [PriorityQueue](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Priority%20Queue/README.markdown)
 
