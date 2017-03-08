@@ -92,3 +92,11 @@ fn test_remove() {
     assert_eq!(heap.count(), 0);
     assert_eq!(heap.remove(), None);
 }
+
+#[test]
+fn test_heap_sort() {
+    let array = vec![5, 13, 2, 25, 7, 17, 20, 8, 4];
+    let sorted_array = Heap::sort(&array);
+
+    assert_eq!(sorted_array, vec![2, 4, 5, 7, 8, 13, 17, 20, 25]);
+}

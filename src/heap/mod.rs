@@ -105,6 +105,16 @@ impl<T: Clone + PartialOrd> Heap<T> {
         heap.build_heap();
         heap
     }
+
+    pub fn sort(array: &[T]) -> Vec<T> {
+        let mut heap = Heap::with_array(array);
+        for i in 0..heap.count()-1 {
+            let idx = heap.count() - 1 - i;
+            heap.inner.swap(0, idx);
+            heap.shift_down(0, idx);
+        }
+        heap.inner.clone()
+    }
 }
 
 #[cfg(test)]
