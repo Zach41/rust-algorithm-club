@@ -24,7 +24,7 @@ impl Message {
 }
 
 #[test]
-fn testEmpty() {
+fn test_empty() {
     let mut queue: PriorityQueue<Message> = PriorityQueue::new();
 
     assert!(queue.is_empty());
@@ -34,7 +34,7 @@ fn testEmpty() {
 }
 
 #[test]
-fn testOneElement() {
+fn test_one_element() {
     let mut queue: PriorityQueue<Message> = PriorityQueue::new();
 
     queue.enqueue(Message::new("Zach", 12));
@@ -50,7 +50,7 @@ fn testOneElement() {
 }
 
 #[test]
-fn testTwoElement() {
+fn test_two_element() {
     let mut queue: PriorityQueue<Message> = PriorityQueue::new();
 
     queue.enqueue(Message::new("Zach", 12));
@@ -74,7 +74,7 @@ fn testTwoElement() {
 }
 
 #[test]
-fn testOutOfOrder() {
+fn test_out_of_order() {
     let mut queue: PriorityQueue<Message> = PriorityQueue::new();
 
     queue.enqueue(Message::new("Zach2", 13));

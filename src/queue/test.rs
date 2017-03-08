@@ -2,7 +2,7 @@ use super::Queue;
 
 #[test]
 fn test_empty() {
-    let mut queue: Queue<usize> = Queue::new();
+    let queue: Queue<usize> = Queue::new();
 
     assert!(queue.is_empty());
     assert_eq!(queue.count(), 0);

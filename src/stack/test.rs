@@ -1,7 +1,7 @@
 use super::Stack;
 
 #[test]
-fn testEmpty() {
+fn test_empty() {
     let mut stack: Stack<usize> = Stack::new();
     assert_eq!(stack.len(), 0);
     assert!(stack.is_empty());
@@ -10,7 +10,7 @@ fn testEmpty() {
 }
 
 #[test]
-fn testOneElement() {
+fn test_one_element() {
     let mut stack: Stack<usize> = Stack::new();
     stack.push(1);
     assert_eq!(stack.len(), 1);
@@ -26,7 +26,7 @@ fn testOneElement() {
 }
 
 #[test]
-fn testTwoElement() {
+fn test_two_element() {
     let mut stack: Stack<usize> = Stack::new();
     stack.push(123);
     stack.push(456);
