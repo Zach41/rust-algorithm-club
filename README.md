@@ -15,4 +15,5 @@ Just used to learn Rust and algorithm.
 - [Queue](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Queue/README.markdown)
 - [PriorityQueue](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Priority%20Queue/README.markdown)
 - [Huffman Coding](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Huffman%20Coding/README.markdown)
+- [Insertion Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Insertion%20Sort/README.markdown)
 
