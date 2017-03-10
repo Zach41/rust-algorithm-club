@@ -84,11 +84,7 @@ impl<'a> BitReader<'a> {
         }
         self.in_count += 1;
 
-        let ret = if (self.in_byte & 0x80) == 0 {
-            false
-        } else {
-            true
-        };
+        let ret = !((self.in_byte & 0x80) == 0);
         self.in_byte <<= 1;
         ret
     }
@@ -161,7 +157,7 @@ pub struct Huffman {
 
 impl fmt::Debug for Huffman {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        for node in self.tree.iter() {
+        for node in &self.tree {
             if node.count > 0 {
                 writeln!(f, "idx: {}, parent: {}, count: {}, left: {}, right: {}",
                          node.index, node.parent, node.count, node.left, node.right)?;
@@ -271,7 +267,7 @@ impl Huffman {
         self.build_tree();
 
         let mut writer = BitWriter::new();
-        for byte in data.into_iter() {
+        for byte in data {
             self.traverse_tree(&mut writer, byte as i32, -1);
         }
         writer.flush();
