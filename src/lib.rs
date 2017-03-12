@@ -10,3 +10,4 @@ mod priority_queue;
 mod huffman_coding;
 mod insertion_sort;
 mod bsearch_tree;
+mod binary_search;

@@ -17,4 +17,5 @@ Just used to learn Rust and algorithm.
 - [Huffman Coding](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Huffman%20Coding/README.markdown)
 - [Insertion Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Insertion%20Sort/README.markdown)
 - [Binary Search Tree](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Binary%20Search%20Tree/README.markdown)
+- [Binary Search](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search)
 

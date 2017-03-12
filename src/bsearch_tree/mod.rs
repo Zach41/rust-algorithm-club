@@ -19,8 +19,7 @@ impl<T: Ord> BSearchTree<T> {
     pub fn value(&self) -> Option<&T> {
         match *self {
             BSearchTree::Empty => None,
-            BSearchTree::Leaf(ref v) => Some(v),
-            BSearchTree::Node(_, ref v, _) => Some(v),
+            BSearchTree::Leaf(ref v) | BSearchTree::Node(_, ref v, _) => Some(v),
         }
     } 
 
