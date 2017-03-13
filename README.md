@@ -18,4 +18,5 @@ Just used to learn Rust and algorithm.
 - [Insertion Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Insertion%20Sort/README.markdown)
 - [Binary Search Tree](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Binary%20Search%20Tree/README.markdown)
 - [Binary Search](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search)
+- [Merge Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Merge%20Sort/README.markdown)
 
