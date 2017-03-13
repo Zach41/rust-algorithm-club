@@ -1,4 +1,4 @@
-fn binary_search<T: Ord>(a: &[T], key: T, left: usize, right: usize) -> Option<usize> {
+pub fn binary_search<T: Ord>(a: &[T], key: T, left: usize, right: usize) -> Option<usize> {
     if left >= right {
         return None;
     }
@@ -13,7 +13,7 @@ fn binary_search<T: Ord>(a: &[T], key: T, left: usize, right: usize) -> Option<u
     }
 }
 
-fn binary_search2<T: Ord>(a: &[T], key: T) -> Option<usize> {
+pub fn binary_search2<T: Ord>(a: &[T], key: T) -> Option<usize> {
     let mut left = 0;
     let mut right = a.len();
     while left < right {

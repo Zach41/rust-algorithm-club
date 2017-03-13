@@ -12,3 +12,4 @@ mod insertion_sort;
 mod bsearch_tree;
 mod binary_search;
 mod merge_sort;
+mod cnt_occurrences;
