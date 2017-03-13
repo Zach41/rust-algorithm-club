@@ -11,3 +11,4 @@ mod huffman_coding;
 mod insertion_sort;
 mod bsearch_tree;
 mod binary_search;
+mod merge_sort;
