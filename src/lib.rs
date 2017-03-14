@@ -15,3 +15,4 @@ mod merge_sort;
 mod cnt_occurrences;
 mod kth_smallest;
 mod union_find;
+mod quick_sort;

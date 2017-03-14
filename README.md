@@ -20,3 +20,4 @@ Just used to learn Rust and algorithm.
 - [Binary Search](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Binary%20Search)
 - [Merge Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Merge%20Sort/README.markdown)
 - [Count Occurrences Within Sorted Array](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Count%20Occurrences)
+- [Quick Sort](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Quicksort)
