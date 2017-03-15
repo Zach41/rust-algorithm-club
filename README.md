@@ -21,3 +21,4 @@ Just used to learn Rust and algorithm.
 - [Merge Sort](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Merge%20Sort/README.markdown)
 - [Count Occurrences Within Sorted Array](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Count%20Occurrences)
 - [Quick Sort](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Quicksort)
+- [Selection Sort](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Selection%20Sort)
