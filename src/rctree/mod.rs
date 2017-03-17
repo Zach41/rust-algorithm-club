@@ -277,7 +277,28 @@ impl<T> NodeRef<T> {
                     parent_borrow_mut.first_child = Some(new_sibling.0);
                 }
             }
-        }        
+        }
+    }
+}
+
+impl<T: Ord> NodeRef<T> {
+    /// Find node with value, we take the first node occurred, if not found, return None
+    pub fn find_node(&self, value: &T) -> Option<NodeRef<T>> {
+        use std::cmp::Ordering;
+        let mut traverse_nodes = self.traverse();
+        while let Some(edge) = traverse_nodes.next() {
+            match edge {
+                NodeEdge::Start(node) => {
+                    let borrowed_value = &*node.borrow();
+                    match borrowed_value.cmp(value) {
+                        Ordering::Equal => { return Some(node.clone()); }
+                        _ => {}
+                    }
+                },
+                _ => {}
+            }
+        }
+        None
     }
 }
 
