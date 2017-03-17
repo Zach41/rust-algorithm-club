@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
+#![feature(move_cell)]
 
 #[macro_use]
 extern crate log;
@@ -20,3 +21,4 @@ mod quick_sort;
 mod selection_sort;
 mod trie;
 mod rctree;
+mod arena_tree;
