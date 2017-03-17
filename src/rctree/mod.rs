@@ -270,13 +270,11 @@ impl<T> NodeRef<T> {
         if let Some(previous_strong) = previous_child_opt {
             let mut previous_borrow_mut = previous_strong.borrow_mut();
             previous_borrow_mut.next_sibling = Some(new_sibling.0);
-        } else {
-            if let Some(parent_ref) = self_borrow_mut.parent.as_ref() {
+        } else if let Some(parent_ref) = self_borrow_mut.parent.as_ref() {
                 if let Some(parent_strong) = parent_ref.upgrade() {
                     let mut parent_borrow_mut = parent_strong.borrow_mut();
                     parent_borrow_mut.first_child = Some(new_sibling.0);
                 }
-            }
         }
     }
 }
@@ -285,17 +283,13 @@ impl<T: Ord> NodeRef<T> {
     /// Find node with value, we take the first node occurred, if not found, return None
     pub fn find_node(&self, value: &T) -> Option<NodeRef<T>> {
         use std::cmp::Ordering;
-        let mut traverse_nodes = self.traverse();
-        while let Some(edge) = traverse_nodes.next() {
-            match edge {
-                NodeEdge::Start(node) => {
-                    let borrowed_value = &*node.borrow();
-                    match borrowed_value.cmp(value) {
-                        Ordering::Equal => { return Some(node.clone()); }
-                        _ => {}
-                    }
-                },
-                _ => {}
+        let traverse_nodes = self.traverse();
+        for edge in traverse_nodes {
+            if let NodeEdge::Start(node) = edge {
+                let borrowed_value = &*node.borrow();
+                if let Ordering::Equal =  borrowed_value.cmp(value) {
+                    return Some(node.clone());
+                }
             }
         }
         None
