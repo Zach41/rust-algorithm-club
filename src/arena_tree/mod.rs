@@ -102,7 +102,7 @@ impl<'a, T> ArenaNode<'a, T> {
     pub fn append(&'a self, new_child: &'a ArenaNode<'a, T>) {
         new_child.detach();
         new_child.parent.set(Some(self));
-        if let Some(last_child) = self.last_child() {
+        if let Some(last_child) = self.last_child.take() {
             new_child.previous_sibling.set(Some(last_child));
             last_child.next_sibling.set(Some(new_child));
         } else {
@@ -114,7 +114,7 @@ impl<'a, T> ArenaNode<'a, T> {
     pub fn prepend(&'a self, new_child: &'a ArenaNode<'a, T>) {
         new_child.detach();
         new_child.parent.set(Some(self));
-        if let Some(first_child) = self.first_child() {
+        if let Some(first_child) = self.first_child.take() {
             first_child.previous_sibling.set(Some(new_child));
             new_child.next_sibling.set(Some(first_child));
         } else {
@@ -127,7 +127,9 @@ impl<'a, T> ArenaNode<'a, T> {
         new_sibling.detach();
         let parent_opt = self.parent();
         let previous_sibling_opt = self.previous_sibling();
-
+        new_sibling.parent.set(parent_opt);
+        new_sibling.next_sibling.set(Some(self));
+        
         if let Some(previous_sibling) = previous_sibling_opt {
             previous_sibling.next_sibling.set(Some(new_sibling));
             new_sibling.previous_sibling.set(Some(previous_sibling))
@@ -138,10 +140,12 @@ impl<'a, T> ArenaNode<'a, T> {
     }
 
     pub fn insert_after(&'a self, new_sibling: &'a ArenaNode<'a, T>) {
-        new_sibling.detach();
-        let parent = self.parent();
+        new_sibling.detach();        
+        let parent = self.parent();        
         let next_sibling = self.next_sibling();
-
+        new_sibling.parent.set(parent);
+        new_sibling.previous_sibling.set(Some(self));
+        
         if let Some(next_sibling) = next_sibling {
             next_sibling.previous_sibling.set(Some(new_sibling));
             new_sibling.next_sibling.set(Some(next_sibling));
@@ -276,3 +280,6 @@ impl<'a, T> Iterator for Descendants<'a, T> {
         }
     }
 }
+
+#[cfg(test)]
+mod test;
