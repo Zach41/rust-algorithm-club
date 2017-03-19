@@ -22,3 +22,4 @@ mod selection_sort;
 mod trie;
 mod rctree;
 mod arena_tree;
+mod idtree;
