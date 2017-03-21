@@ -26,3 +26,4 @@ Just used to learn Rust and algorithm.
 - [ID Tree](https://github.com/SimonSapin/rust-forest)
 - [Arena Tree](https://github.com/SimonSapin/rust-forest)
 - [Trie](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Trie/ReadMe.md)
+- [BitSet](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Bit%20Set/README.markdown)
