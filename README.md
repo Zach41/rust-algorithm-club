@@ -25,3 +25,4 @@ Just used to learn Rust and algorithm.
 - [Reference Counter Tree](https://github.com/SimonSapin/rust-forest)
 - [ID Tree](https://github.com/SimonSapin/rust-forest)
 - [Arena Tree](https://github.com/SimonSapin/rust-forest)
+- [Trie](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Trie/ReadMe.md)
