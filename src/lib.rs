@@ -4,6 +4,7 @@
 
 #[macro_use]
 extern crate log;
+extern crate slab;
 
 mod stack;
 mod heap;
