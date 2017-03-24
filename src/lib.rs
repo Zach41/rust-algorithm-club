@@ -1,10 +1,12 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
 #![feature(move_cell)]
+#![feature(test)]
 
 #[macro_use]
 extern crate log;
 extern crate slab;
+extern crate test;
 
 mod stack;
 mod heap;
@@ -26,3 +28,4 @@ mod arena_tree;
 mod idtree;
 mod bitset;
 mod btree;
+mod segtree;
