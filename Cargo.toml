@@ -8,6 +8,4 @@ readme = "README.md"
 log = "0.3"
 env_logger = "0.3"
 slab = "0.3"
-
-[dev-dependencies]
 typed-arena = "1.2"

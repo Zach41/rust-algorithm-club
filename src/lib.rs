@@ -25,3 +25,4 @@ mod rctree;
 mod arena_tree;
 mod idtree;
 mod bitset;
+mod btree;

@@ -1,10 +1,8 @@
-#[cfg(test)]
 extern crate typed_arena;
 
 use std::ops::Drop;
 use std::cell::Cell;
 
-#[cfg(test)]
 use self::typed_arena::Arena;
 
 use super::*;
