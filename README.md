@@ -28,3 +28,4 @@ Just used to learn Rust and algorithm.
 - [Trie](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Trie/ReadMe.md)
 - [BitSet](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Bit%20Set/README.markdown)
 - [Segment Tree](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Segment%20Tree/README.markdown)
+- [Graph](https://github.com/raywenderlich/swift-algorithm-club/blob/master/Graph/README.markdown)
