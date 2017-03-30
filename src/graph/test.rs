@@ -186,3 +186,39 @@ fn test_dfs_matrix() {
 fn test_dfs_list() {
     test_dfs!(AdjacencyListGraph);
 }
+
+
+macro_rules! test_dijsktra {
+    ($graph_type: ident) => {
+        let mut graph = $graph_type::new();
+
+        let a1 = graph.create_vertex(1);
+        let a2 = graph.create_vertex(2);
+        let a3 = graph.create_vertex(3);
+        let a4 = graph.create_vertex(4);
+        let a5 = graph.create_vertex(5);
+        let a6 = graph.create_vertex(6);
+
+        graph.add_directed_edge(a1, a2, Some(1.0));
+        graph.add_directed_edge(a1, a3, Some(12.0));
+        graph.add_directed_edge(a2, a3, Some(9.0));
+        graph.add_directed_edge(a2, a4, Some(3.0));
+        graph.add_directed_edge(a3, a5, Some(5.0));
+        graph.add_directed_edge(a4, a3, Some(4.0));
+        graph.add_directed_edge(a4, a5, Some(13.0));
+        graph.add_directed_edge(a4, a6, Some(15.0));
+        graph.add_directed_edge(a5, a6, Some(4.0));
+
+        assert_eq!(graph.dijkstra(a1), [0.0, 1.0, 8.0, 4.0, 13.0, 17.0]);
+    }
+}
+
+#[test]
+fn test_dijsktra_matrix() {
+    test_dijsktra!(AdjacencyMatrixGraph);
+}
+
+#[test]
+fn test_dijsktra_list() {
+    test_dijsktra!(AdjacencyListGraph);
+}

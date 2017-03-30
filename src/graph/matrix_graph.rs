@@ -173,4 +173,50 @@ impl<T> AdjacencyMatrixGraph<T> {
             }
         }
     }
+
+    pub fn dijkstra(&self, src: VertexId) -> Vec<f32> {
+        assert!(src < self.vertices.len());
+        
+        use std::iter;
+        use std::f32::MAX as F32MAX;
+        use std::usize::MAX as USIZEMAX;
+        
+        let mut visited: Vec<_> = iter::repeat(false).take(self.vertices.len()).collect();
+        let mut dist: Vec<_> = iter::repeat(F32MAX).take(self.vertices.len()).collect();
+
+        for (idx, weight) in self.weights[src].iter().enumerate() {
+            if let Some(weight) = *weight {
+                dist[idx] = weight;
+            } else {
+                dist[idx] = F32MAX;
+            }
+        }
+
+        dist[src] = 0f32;
+        visited[src] = true;
+
+        for _ in 0..self.vertices.len() - 1 {
+            let mut min_dist = F32MAX;
+            let mut min_idx = 0;
+
+            for (idx, dis) in dist.iter().enumerate() {
+                if min_dist > *dis && !visited[idx] {
+                    min_idx = idx;
+                    min_dist = *dis;
+                }
+            }
+            if min_dist == F32MAX {
+                return dist;
+            }
+            visited[min_idx] = true;
+            for idx in 0..dist.len() {
+                if let Some(weight) = self.weights[min_idx][idx] {
+                    if dist[idx] > dist[min_idx] + weight {
+                        dist[idx] = dist[min_idx] + weight;
+                    }
+                }
+            }
+        }
+        dist
+    }
 }

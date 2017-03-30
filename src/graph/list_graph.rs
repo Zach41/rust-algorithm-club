@@ -129,4 +129,44 @@ impl<T> AdjacencyListGraph<T> {
             self._dfs_traverse(edge.to, visited, out_vertices);
         }
     }
+
+    pub fn dijkstra(&self, src: VertexId) -> Vec<f32> {
+        use std::iter;
+        use std::f32::MAX as F32MAX;
+        
+        let mut visited: Vec<_> = iter::repeat(false).take(self.vertices.len()).collect();
+        let mut dist: Vec<_> = iter::repeat(F32MAX).take(self.vertices.len()).collect();
+
+        for edge in &self.edge_list[src] {
+            if let Some(weight) = edge.weight {
+                dist[edge.to] = weight;
+            }
+        }
+        dist[src] = 0f32;
+        visited[src] = true;
+
+        for _ in 0..self.vertices.len() - 1 {
+            let mut min_dist = F32MAX;
+            let mut min_idx = 0;
+
+            for (idx, dis) in dist.iter().enumerate() {
+                if min_dist > *dis && !visited[idx] {
+                    min_dist = *dis;
+                    min_idx = idx;
+                }
+            }
+            if min_dist == F32MAX {
+                return dist;
+            }
+            visited[min_idx] = true;
+            for edge in &self.edge_list[min_idx] {
+                if let Some(weight) = edge.weight {
+                    if dist[edge.to] > dist[min_idx] + weight {
+                        dist[edge.to] = dist[min_idx] + weight;
+                    }
+                }
+            }
+        }
+        dist
+    }
 }
